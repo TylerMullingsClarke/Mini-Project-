@@ -8,6 +8,7 @@ namespace Mini_Project.Model
 {
     public interface ISorter
     {
+        string SortName { get; }
         int[] Sort(int[] nums);
     }
 }

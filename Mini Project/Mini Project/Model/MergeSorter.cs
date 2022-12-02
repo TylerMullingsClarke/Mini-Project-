@@ -8,6 +8,8 @@ namespace Mini_Project.Model
 {
     public class MergeSorter : ISorter
     {
+        public string SortName { get; } = "Merge Sort";
+
         public int[] Sort(int[] nums) {
             //Basecase: An array of length 1 is sorted
             if (nums.Length == 1) { return nums; }
