@@ -9,7 +9,30 @@ namespace Mini_Project.Model
     public class MergeSorter : ISorter
     {
         public int[] Sort(int[] nums) {
-            throw new NotImplementedException();
+            if (nums.Length == 1) { return nums; }
+            int splitIndex = (nums.Length / 2);
+            int[] arrLeft = Sort(nums[0..splitIndex]);
+            int[] arrRight = Sort(nums[(splitIndex+1)..nums.Length]); 
+            int[] rtnArr = new int[arrLeft.Length + arrRight.Length];
+            int i = 0; int j = 0;
+            for (int k = 0; k < rtnArr.Length; k++)
+            {
+                if (
+                    j >= arrRight.Length //adds from arr1 immediately if j is out of bounds
+                    || (
+                        i < arrLeft.Length //adds from arr2 immediately if i is out of bounds
+                        && arrLeft[i] < arrRight[j] //then compares arr1 and arr2 if they are both in bounds
+                    )
+                )
+                {
+                    rtnArr[k] = arrLeft[i++];
+                }
+                else
+                {
+                    rtnArr[k] = arrRight[j++];
+                }
+            }
+            return rtnArr;
         }
     }
 }
