@@ -16,5 +16,20 @@ namespace Mini_Project.Controller
             Sorter = sorter;
             ArrayToSort = arrayToSort;
         }
+
+        public void DisplayArray() {
+            foreach (var item in ArrayToSort) {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+        }
+
+        public void DisplayArraySorted() {
+            var sortedArr = Sorter.Sort(ArrayToSort);
+            foreach (var item in sortedArr) {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+        }
     }
 }

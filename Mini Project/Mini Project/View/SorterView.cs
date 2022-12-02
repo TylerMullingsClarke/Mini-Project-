@@ -1,5 +1,6 @@
 ﻿using Mini_Project.Controller;
 using Mini_Project.Model;
+using Mini_Project.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +13,30 @@ namespace Mini_Project.View
     public class SorterView
     {
         public static void Main(string[] args) {
-            SorterController _controller = new SorterController(new DefaultSorter(), new int[] { 3, 2, 1 });
             Console.Write("Input a length: ");
             var lengthInput = Console.ReadLine();
             var success = int.TryParse(lengthInput, out var length);
+
+            int[] array;
             if (success) {
-                int[] array = _controller.GenerateRandomArray(length);
-                Console.WriteLine(array.ToString());
-                int[] sortedArray = _controller.Sorter.Sort(array);
-                Console.WriteLine(sortedArray.ToString());
+                array = ArrayGenerator.NewRandom(length);
             }
-            var choice = DisplayAndAskForChoices();
+            else {
+                throw new ArgumentException();
+            }
+            var choice = GetUserAlgorithmChoice();
             var sorter = SelectSorter(choice);
-            Console.WriteLine($"Sorter is {sorter.GetType()}");
+            var controller = new SorterController(sorter, array);
+
+            Console.WriteLine("\n---\n");
+            Console.WriteLine("Unsorted:");
+            controller.DisplayArray();
+            Console.WriteLine("\n---\n");
+            Console.WriteLine("Sorted:");
+            controller.DisplayArraySorted();
         }
 
-        public static int DisplayAndAskForChoices() {
+        public static int GetUserAlgorithmChoice() {
             Console.WriteLine("Choose a sort algorithm:");
             Console.WriteLine("1) Bubble Sort");
             Console.WriteLine("2) Merge Sort");
