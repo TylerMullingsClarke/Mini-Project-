@@ -16,14 +16,5 @@ namespace Mini_Project.Controller
             Sorter = sorter;
             ArrayToSort = arrayToSort;
         }
-
-        public int[] GenerateRandomArray(int length) {
-            var arr = new int[length];
-            var rand = new Random();
-            for (int i = 0; i < length; i++) {
-                arr[i] = rand.Next(0, 1000);
-            }
-            return arr;
-        }
     }
 }
