@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Mini_Project.Controller.SorterController">
+    <Position X="12" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAIAAgAAEAAAAAAAAAAgAAAAAAAAAAAAAAIAAAg=</HashCode>
+      <FileName>Controller\SorterController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mini_Project.Model.BubbleSorter" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\BubbleSorter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.773" />
+  </Class>
+  <Class Name="Mini_Project.Model.DefaultSorter" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\DefaultSorter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.065" />
+  </Class>
+  <Class Name="Mini_Project.Model.MergeSorter" BaseTypeListCollapsed="true">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAQAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\MergeSorter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ISorter" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="Mini_Project.View.SorterView">
+    <Position X="7.75" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAgAAgAAAAAAAIAAAAIEFAAAg=</HashCode>
+      <FileName>View\SorterView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mini_Project.Utilities.ArrayGenerator">
+    <Position X="3" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Utilities\ArrayGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mini_Project.Utilities.ConsoleHelpers">
+    <Position X="15.75" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\ConsoleHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mini_Project.Model.SelectionSorter">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\SelectionSorter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Mini_Project.Model.InsertSort">
+    <Position X="13.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\InsertSort.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Mini_Project.Model.ISorter">
+    <Position X="10" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ISorter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
