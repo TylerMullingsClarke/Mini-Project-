@@ -99,7 +99,7 @@ namespace Mini_Project.View
                     curUserSelection = (curUserSelection + 1) % NumAlgorithms;
                 }
                 else if (keyInfo.Value.Key == ConsoleKey.UpArrow) {
-                    curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % NumAlgorithms : NumAlgorithms;
+                    curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % NumAlgorithms : NumAlgorithms - 1;
                 }
 
                 ConsoleHelpers.ClearPreviousConsoleLines(numLines + 1);  // 1 extra necessary due to user input (I think)
