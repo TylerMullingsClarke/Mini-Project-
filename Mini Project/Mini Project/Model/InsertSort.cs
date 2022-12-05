@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mini_Project.Model
 {
-    internal class InsertSort : ISorter
+    public class InsertSort : ISorter
     {
         public string SortName { get; } = "Insert Sort";
 

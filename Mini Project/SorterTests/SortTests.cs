@@ -8,8 +8,8 @@ namespace SorterTests
 {
     public class SortTests
     {
-        int[] array = new int[5] { 6, 3, 7, 2, 1 };
-        int[] sorted = new int[5] { 1, 2, 3, 6, 7 };
+        readonly int[] array = new int[5] { 6, 3, 7, 2, 1 };
+        readonly int[] sorted = new int[5] { 1, 2, 3, 6, 7 };
 
         [TestCase(0, "Bubble Sort")]
         [TestCase(1, "Merge Sort")]
@@ -54,6 +54,22 @@ namespace SorterTests
         {
             var MergeSort = new MergeSorter();
             Assert.That(sorted, Is.EqualTo(MergeSort.Sort(array)));
+        }
+
+        [Test]
+        [Category("InsertionSorter Tests")]
+        public void GivenArray_InsertionSorter_ReturnsSortedArray()
+        {
+            var insertSort = new InsertSort();
+            Assert.That(sorted, Is.EqualTo(insertSort.Sort(array)));
+        }
+
+        [Test]
+        [Category("SelectionSorter Tests")]
+        public void GivenArray_SelectSorter_ReturnsSortedArray()
+        {
+            var selectSort = new SelectionSorter();
+            Assert.That(sorted, Is.EqualTo(selectSort.Sort(array)));
         }
     }
 }
