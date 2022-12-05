@@ -3,7 +3,7 @@
   <Class Name="Mini_Project.Controller.SorterController">
     <Position X="12" Y="1" Width="2" />
     <TypeIdentifier>
-      <HashCode>QAAAAAIAAgAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>QAAAAAIAAgAAEAAAAAAAAAAgAAAAAAAAAAAAAAIAAAg=</HashCode>
       <FileName>Controller\SorterController.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -42,18 +42,34 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Mini_Project.Utilities.ArrayGenerator">
-    <Position X="6" Y="4.25" Width="1.5" />
+    <Position X="3" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Utilities\ArrayGenerator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Mini_Project.Utilities.ConsoleHelpers">
-    <Position X="13.75" Y="4.25" Width="2.25" />
+    <Position X="15.75" Y="4.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Utilities\ConsoleHelpers.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Mini_Project.Model.SelectionSorter">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\SelectionSorter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Mini_Project.Model.InsertSort">
+    <Position X="13.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\InsertSort.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Mini_Project.Model.ISorter">
     <Position X="10" Y="6.75" Width="1.5" />
