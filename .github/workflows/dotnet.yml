@@ -46,7 +46,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./Mini-Project-
+    working-directory: Mini-Project-
 
 jobs:
   build:
