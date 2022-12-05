@@ -24,6 +24,7 @@ namespace SorterTests
                 return ArrayGenerator.NewRandom(input);
             }, Throws.TypeOf<ArgumentOutOfRangeException>());
         }
+        
 
         [TestCase(2)]
         [TestCase(10)]

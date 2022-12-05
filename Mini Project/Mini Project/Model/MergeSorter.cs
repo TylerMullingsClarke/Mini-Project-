@@ -10,6 +10,14 @@ namespace Mini_Project.Model
     {
         public string SortName { get; } = "Merge Sort";
 
+        public ISorter ISorter
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public int[] Sort(int[] nums) {
             //Basecase: An array of length 1 is sorted
             if (nums.Length == 1) { return nums; }
