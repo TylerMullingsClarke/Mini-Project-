@@ -8,12 +8,11 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QAAAAAIAAgAAEAAAAAAAAAAgAAACAAAAAAAAAAIABAg=</HashCode>
+      <HashCode>QAAAAAIAAgAAAAAAAAAAAAAgAAACAAAAAAAAAAIABAA=</HashCode>
       <FileName>Controller\SorterController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="DefaultSorter" />
-      <Property Name="SorterView" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Mini_Project.Model.BubbleSorter" BaseTypeListCollapsed="true">
@@ -49,36 +48,6 @@
     </ShowAsAssociation>
     <Lollipop Position="0.1" />
   </Class>
-  <Class Name="Mini_Project.View.SorterView">
-    <Position X="7" Y="1" Width="2.25" />
-    <AssociationLine Name="BubbleSorter" Type="Mini_Project.Model.BubbleSorter">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.058" Y="0.331" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="MergeSorter" Type="Mini_Project.Model.MergeSorter" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="9.25" Y="3.375" />
-        <Point X="9.25" Y="3.448" />
-        <Point X="9.413" Y="3.448" />
-        <Point X="9.413" Y="3.386" />
-        <Point X="10.75" Y="3.386" />
-        <Point X="10.75" Y="4.25" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.047" Y="0.373" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAIBgAAJABAAQg=</HashCode>
-      <FileName>View\SorterView.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="BubbleSorter" />
-      <Property Name="MergeSorter" />
-      <Property Name="SorterController" />
-    </ShowAsAssociation>
-  </Class>
   <Class Name="Mini_Project.Utilities.ArrayGenerator">
     <Position X="6" Y="4.25" Width="1.5" />
     <TypeIdentifier>
@@ -91,6 +60,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Utilities\ConsoleHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mini_Project.View.SorterView">
+    <Position X="7" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAQAAAAAAAAAgAAAAAAAIAAAAJAFAAAg=</HashCode>
+      <FileName>View\SorterView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Mini_Project.Model.ISorter">
