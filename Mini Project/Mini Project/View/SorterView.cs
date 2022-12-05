@@ -10,7 +10,34 @@ namespace Mini_Project.View
         private static string _newline = Environment.NewLine;
         private const int NumAlgorithms = 3;
 
+<<<<<<< HEAD
+        public BubbleSorter BubbleSorter
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public MergeSorter MergeSorter
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public SorterController SorterController
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+=======
         //Main Loop
+>>>>>>> fc52210106b7a2079e30cb775b3f63c5605e5fc3
         public static void Main(string[] args) {
             bool running = true;
             while (running)
