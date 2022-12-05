@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mini_Project.Model
 {
-    internal class SelectionSorter : ISorter
+    public class SelectionSorter : ISorter
     {
-        public string SortName { get; } = "Select Sort";
+        public string SortName { get; } = "Selection Sort";
 
         public int[] Sort(int[] nums)
         {

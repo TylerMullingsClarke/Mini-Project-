@@ -8,7 +8,7 @@ namespace Mini_Project.View
     public class SorterView
     {
         private static string _newline = Environment.NewLine;
-        private const int NumAlgorithms = 4;
+        private const int NumAlgorithms = 5;
         private SorterController? _controller;
         
         public void MainLoop() {
@@ -100,7 +100,8 @@ namespace Mini_Project.View
                 $"Choose a sort algorithm:{_newline}",
                 "Bubble Sort",
                 "Merge Sort",
-                "Selection Sort",                
+                "Selection Sort",
+                "Insertion Sort",
                 "Default Sort"
              };
             numLines = stringArr.Length + 1;  // + 1 for the newline
