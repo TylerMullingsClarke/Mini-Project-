@@ -27,7 +27,7 @@ namespace Mini_Project.Model
                 {
                     tmp = nums[j];
                     nums[j] = nums[j - 1];
-                    nums[j] = tmp - 1;
+                    nums[j-1] = tmp;
                     j--;
                 }
             }
