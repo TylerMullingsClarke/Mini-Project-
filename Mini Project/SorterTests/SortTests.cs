@@ -13,7 +13,9 @@ namespace SorterTests
 
         [TestCase(0, "Bubble Sort")]
         [TestCase(1, "Merge Sort")]
-        [TestCase(2, "Default Sort")]
+        [TestCase(2, "Selection Sort")]
+        [TestCase(3, "Insert Sort")]
+        [TestCase(4, "Default Sort")]
         [Category("Sort Input Tests")]
         public void GivenSortTypeInput_SorterController_RunsCorrectSort(int sortType, string sort)
         {
