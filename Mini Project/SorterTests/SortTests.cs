@@ -13,11 +13,11 @@ namespace SorterTests
 
         [TestCase(0, "Bubble Sort")]
         [TestCase(1, "Merge Sort")]
-        [TestCase(2, "Default/Quick Sort")]
+        [TestCase(2, "Default Sort")]
         [Category("Sort Input Tests")]
         public void GivenSortTypeInput_SorterController_RunsCorrectSort(int sortType, string sort)
         {
-            ISorter sorter = SorterView.SelectSorter(sortType);
+            ISorter sorter = SorterController.SelectSorter(sortType);
             Assert.That(sorter.SortName, Is.EqualTo(sort));
         }
 
@@ -28,7 +28,7 @@ namespace SorterTests
         {
             Assert.That(() =>
             {
-                return SorterView.SelectSorter(input);
+                return SorterController.SelectSorter(input);
             }, Throws.TypeOf<ArgumentException>());
         }
         
