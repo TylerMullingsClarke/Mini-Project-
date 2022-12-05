@@ -13,11 +13,21 @@ namespace Mini_Project.Model
         public int[] Sort(int[] nums) {
             //Basecase: An array of length 1 is sorted
             if (nums.Length == 1) { return nums; }
-            int splitIndex = (nums.Length / 2)-1;
+            int splitSize = (nums.Length / 2);
             //Splits array and sorts them
-            int[] arrLeft = Sort(nums[0..splitIndex]);
-            int[] arrRight = Sort(nums[(splitIndex+1)..nums.Length]); 
+            int[] arrLeft = new int[splitSize];
+            int[] arrRight = new int[nums.Length - splitSize];
+            Array.Copy(nums, arrLeft, splitSize);
+            Array.Copy(nums, splitSize, arrRight, 0, nums.Length - splitSize);
             //Merges the sorted array
+            arrLeft = Sort(arrLeft);
+            arrRight = Sort(arrRight);
+            int[] rtn = Merge(arrLeft, arrRight);
+            return rtn;
+        }
+
+        static private int[] Merge(int[] arrLeft, int[] arrRight)
+        {
             int[] rtnArr = new int[arrLeft.Length + arrRight.Length];
             int i = 0; int j = 0;
             for (int k = 0; k < rtnArr.Length; k++)

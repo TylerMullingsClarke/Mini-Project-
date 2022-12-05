@@ -32,5 +32,15 @@ namespace Mini_Project.Controller
             string newLines = $"{Environment.NewLine}{Environment.NewLine}";
             Console.WriteLine($"{newLines}Time taken to sort: {stopwatch.Elapsed.TotalMilliseconds}ms");
         }
+
+        public static ISorter SelectSorter(int input) {
+            ISorter sorter = input switch {
+                0 => new BubbleSorter(),
+                1 => new MergeSorter(),
+                2 => new DefaultSorter(),
+                _ => throw new ArgumentException()
+            };
+            return sorter;
+        }
     }
 }

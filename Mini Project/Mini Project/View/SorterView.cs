@@ -8,6 +8,7 @@ namespace Mini_Project.View
     public class SorterView
     {
         private static string _newline = Environment.NewLine;
+        private const int NumAlgorithms = 3;
 
         //Main Loop
         public static void Main(string[] args) {
@@ -18,8 +19,8 @@ namespace Mini_Project.View
                 int length = GetUserArrayLengthChoice();
                 var userSelection = GetUserAlgorithmChoice();
 
-                var sorter = SelectSorter(userSelection);
-                var controller = new SorterController(sorter, length);
+            var sorter = SorterController.SelectSorter(userSelection);
+            var controller = new SorterController(sorter, length);
 
                 DisplayResult(controller);
                 running = continueChoice();
@@ -52,10 +53,11 @@ namespace Mini_Project.View
             bool userEnteredInvalidInput = false;
             while (true) {
                 var numLinesToClear = userEnteredInvalidInput ? 2 : 1;  // Need to clear 2 lines rather than 1 ('invalid input' line)
-                Console.Write("Input a length: ");
+                Console.Write("Input a length (> 0): ");
                 var lengthInput = Console.ReadLine();
                 var success = int.TryParse(lengthInput, out var length);
-                if (!success) {
+                // Consider 0 an invalid input
+                if (!success || length is 0) {
                     ConsoleHelpers.ClearPreviousConsoleLines(numLinesToClear);
                     ConsoleHelpers.WriteLineInColour("Invalid input.", ConsoleColor.Red);
                     userEnteredInvalidInput = true;
@@ -78,11 +80,11 @@ namespace Mini_Project.View
 
                 // curUserSelection stays between 0 and 2
                 if (keyInfo.Value.Key == ConsoleKey.DownArrow) {
-                    curUserSelection = (curUserSelection + 1) % 3;
+                    curUserSelection = (curUserSelection + 1) % NumAlgorithms;
                 }
 
                 else if (keyInfo.Value.Key == ConsoleKey.UpArrow) {
-                    curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % 3 : 2;
+                    curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % NumAlgorithms : 2;
                 }
 
                 ConsoleHelpers.ClearPreviousConsoleLines(numLines + 1);  // 1 extra necessary due to user input (I think)
@@ -91,7 +93,6 @@ namespace Mini_Project.View
             return curUserSelection;
         }
 
-        
         public static ISorter SelectSorter(int input) {
             ISorter sorter = input switch {
                 0 => new BubbleSorter(),
