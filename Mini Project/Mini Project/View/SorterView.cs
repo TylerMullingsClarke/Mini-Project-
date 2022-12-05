@@ -8,7 +8,9 @@ namespace Mini_Project.View
     public class SorterView
     {
         private static string _newline = Environment.NewLine;
+        private const int NumAlgorithms = 3;
 
+<<<<<<< HEAD
         public BubbleSorter BubbleSorter
         {
             get => default;
@@ -33,24 +35,56 @@ namespace Mini_Project.View
             }
         }
 
+=======
+        //Main Loop
+>>>>>>> fc52210106b7a2079e30cb775b3f63c5605e5fc3
         public static void Main(string[] args) {
-            int length = GetUserArrayLengthChoice();
-            var userSelection = GetUserAlgorithmChoice();
+            bool running = true;
+            while (running)
+            {
 
-            var sorter = SelectSorter(userSelection);
+                int length = GetUserArrayLengthChoice();
+                var userSelection = GetUserAlgorithmChoice();
+
+            var sorter = SorterController.SelectSorter(userSelection);
             var controller = new SorterController(sorter, length);
 
-            DisplayResult(controller);
+                DisplayResult(controller);
+                running = continueChoice();
+            }
         }
+
+        //Determines whether the user wants to continue suing the program
+        private static bool continueChoice()
+        {
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Would you like to sort an array again? (Y/N)");
+                string choice = Console.ReadLine();
+                Console.Clear();
+                if (choice.ToUpper() == "Y")
+                {
+                    return true;
+                }
+                else if (choice.ToUpper() == "N")
+                {
+                    return false;
+                }
+                Console.WriteLine("Please provide a valid input");
+            }
+        }
+
 
         private static int GetUserArrayLengthChoice() {
             bool userEnteredInvalidInput = false;
             while (true) {
                 var numLinesToClear = userEnteredInvalidInput ? 2 : 1;  // Need to clear 2 lines rather than 1 ('invalid input' line)
-                Console.Write("Input a length: ");
+                Console.Write("Input a length (> 0): ");
                 var lengthInput = Console.ReadLine();
                 var success = int.TryParse(lengthInput, out var length);
-                if (!success) {
+                // Consider 0 an invalid input
+                if (!success || length is 0) {
                     ConsoleHelpers.ClearPreviousConsoleLines(numLinesToClear);
                     ConsoleHelpers.WriteLineInColour("Invalid input.", ConsoleColor.Red);
                     userEnteredInvalidInput = true;
@@ -73,11 +107,11 @@ namespace Mini_Project.View
 
                 // curUserSelection stays between 0 and 2
                 if (keyInfo.Value.Key == ConsoleKey.DownArrow) {
-                    curUserSelection = (curUserSelection + 1) % 3;
+                    curUserSelection = (curUserSelection + 1) % NumAlgorithms;
                 }
 
                 else if (keyInfo.Value.Key == ConsoleKey.UpArrow) {
-                    curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % 3 : 2;
+                    curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % NumAlgorithms : 2;
                 }
 
                 ConsoleHelpers.ClearPreviousConsoleLines(numLines + 1);  // 1 extra necessary due to user input (I think)
