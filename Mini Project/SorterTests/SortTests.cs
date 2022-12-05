@@ -21,7 +21,7 @@ namespace SorterTests
             Assert.That(sorter.SortName, Is.EqualTo(sort));
         }
 
-        [TestCase(3)]
+        
         [TestCase(10)]
         [Category("Sort Input Tests")]
         public void GivenInvalidSortTypeInput_ExceptionThrown(int input)
