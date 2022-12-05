@@ -1,5 +1,4 @@
 ﻿using Mini_Project.Controller;
-using Mini_Project.Model;
 using Mini_Project.Utilities;
 using System.Text;
 
@@ -10,12 +9,17 @@ namespace Mini_Project.View
         private static string _newline = Environment.NewLine;
         private const int NumAlgorithms = 5;
         private SorterController? _controller;
-        
+
         public void MainLoop() {
             bool running = true;
-            while (running)
-            {
+            while (running) {
                 int length = GetUserArrayLengthChoice();
+                var timeAllSelection = GetUserTimeAllChoice();
+                if (timeAllSelection) { 
+                    SorterTimer.TimeAllSorts(ArrayGenerator.NewRandom(length));
+                    running = ContinueChoice();
+                    continue;
+                }
                 var userSelection = GetUserAlgorithmChoice();
 
                 var sorter = SorterController.SelectSorter(userSelection);
@@ -26,28 +30,40 @@ namespace Mini_Project.View
             }
         }
 
-
-        //Determines whether the user wants to continue suing the program
-        private static bool ContinueChoice()
-        {
-            while (true)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Would you like to sort an array again? (Y/N)");
-                string choice = Console.ReadLine();
+        private static bool GetUserTimeAllChoice() {
+            while (true) { 
+                Console.Write("Do you want to time all sorts? (y/n) ");
+                var choice = Console.ReadLine();
                 Console.Clear();
-                if (choice.ToUpper() == "Y")
-                {
+                if (choice is null) {
+                    return false;
+                }
+                if (choice.ToUpper() is "Y"){
                     return true;
                 }
-                else if (choice.ToUpper() == "N")
-                {
+                if (choice.ToUpper() is "N") {
                     return false;
                 }
                 Console.WriteLine("Please provide a valid input before you are smited by Lord Phil");
             }
         }
 
+        //Determines whether the user wants to continue suing the program
+        private static bool ContinueChoice() {
+            while (true) {
+                Console.WriteLine();
+                Console.WriteLine("Would you like to sort an array again? (Y/N)");
+                string choice = Console.ReadLine();
+                Console.Clear();
+                if (choice.ToUpper() == "Y") {
+                    return true;
+                }
+                else if (choice.ToUpper() == "N") {
+                    return false;
+                }
+                Console.WriteLine("Please provide a valid input before you are smited by Lord Phil");
+            }
+        }
 
         private static int GetUserArrayLengthChoice() {
             bool userEnteredInvalidInput = false;
@@ -69,7 +85,7 @@ namespace Mini_Project.View
         }
 
         private static int GetUserAlgorithmChoice() {
-            Console.CursorVisible = false;  // Hide the console cursor while the user uses arrow keys to select            
+            Console.CursorVisible = false;  // Hide the console cursor while the user uses arrow keys to select
             var curUserSelection = 0;    // Start user on first available choice
 
             // Keep looping through until the user presses enter
@@ -82,7 +98,6 @@ namespace Mini_Project.View
                 if (keyInfo.Value.Key == ConsoleKey.DownArrow) {
                     curUserSelection = (curUserSelection + 1) % NumAlgorithms;
                 }
-
                 else if (keyInfo.Value.Key == ConsoleKey.UpArrow) {
                     curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % NumAlgorithms : 2;
                 }
@@ -93,7 +108,7 @@ namespace Mini_Project.View
             return curUserSelection;
         }
 
-        // currentSelection must be between 0 and 4 (inclusive) 
+        // currentSelection must be between 0 and 4 (inclusive)
         private static string MakeChoicesString(int currentSelection, out int numLines) {
             const char PointerChar = '*';
             string[] stringArr = new string[] {
@@ -135,9 +150,3 @@ namespace Mini_Project.View
         }
     }
 }
-
-
-
-
-
-

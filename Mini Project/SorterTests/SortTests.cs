@@ -19,7 +19,7 @@ namespace SorterTests
         [Category("Sort Input Tests")]
         public void GivenSortTypeInput_SorterController_RunsCorrectSort(int sortType, string sort)
         {
-            ISorter sorter = SorterController.SelectSorter(sortType);
+            AbsSorter sorter = SorterController.SelectSorter(sortType);
             Assert.That(sorter.SortName, Is.EqualTo(sort));
         }
 
