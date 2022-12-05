@@ -10,14 +10,6 @@ namespace Mini_Project.Model
     {
         public string SortName { get; } = "Bubble Sort";
 
-        public ISorter ISorter
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public int[] Sort(int[] nums) {
             for (int i = 0; i < nums.Length - 1; i++) //set a starting point at the start of the arrays length,
                                                       //then to go to i minus one so we dont go outside the boundaries of the array

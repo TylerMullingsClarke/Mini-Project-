@@ -10,14 +10,6 @@ namespace Mini_Project.Model
     {
         public string SortName { get; } = "Default Sort";
 
-        public ISorter ISorter
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public int[] Sort(int[] nums) {
             // This method apparently chooses different sorting algorithms
             // depending on the size of the array.
