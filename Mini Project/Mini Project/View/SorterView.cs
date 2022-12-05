@@ -9,6 +9,30 @@ namespace Mini_Project.View
     {
         private static string _newline = Environment.NewLine;
 
+        public BubbleSorter BubbleSorter
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public MergeSorter MergeSorter
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public SorterController SorterController
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static void Main(string[] args) {
             int length = GetUserArrayLengthChoice();
             var userSelection = GetUserAlgorithmChoice();
