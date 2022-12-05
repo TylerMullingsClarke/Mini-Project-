@@ -8,6 +8,9 @@ namespace SorterTests
 {
     public class SortTests
     {
+        int[] array = new int[5] { 6, 3, 7, 2, 1 };
+        int[] sorted = new int[5] { 1, 2, 3, 6, 7 };
+
         [TestCase(0, "Bubble Sort")]
         [TestCase(1, "Merge Sort")]
         [TestCase(2, "Default/Quick Sort")]
@@ -28,25 +31,19 @@ namespace SorterTests
                 return SorterView.SelectSorter(input);
             }, Throws.TypeOf<ArgumentException>());
         }
-
+        
         [Test]
         [Category("BubbleSorter Tests")]
         public void GivenArray_BubbleSort_ReturnsSortedArray()
         {
-            var array = new int[5] {6,3,7,2,1 };
-            var sorted = new int[5] { 1, 2, 3, 6, 7 };
-
             var bubbleSort = new BubbleSorter();
             Assert.That(sorted, Is.EqualTo(bubbleSort.Sort(array)));
         }
-        
+
         [Test]
         [Category("DefaultSorter Tests")]
         public void GivenArray_DefaultSorter_ReturnsSortedArray()
         {
-            var array = new int[5] { 6, 3, 7, 2, 1 };
-            var sorted = new int[5]{ 1, 2, 3, 6, 7 };
-
             var defaultSort = new DefaultSorter();
             Assert.That(sorted, Is.EqualTo(defaultSort.Sort(array)));
         }
@@ -55,9 +52,6 @@ namespace SorterTests
         [Category("MergeSorter Tests")]
         public void GivenArray_MergeSorter_ReturnsSortedArray()
         {
-            var array = new int[5] { 6, 3, 7, 2, 1 };
-            var sorted = new int[5] { 1, 2, 3, 6, 7 };
-
             var MergeSort = new MergeSorter();
             Assert.That(sorted, Is.EqualTo(MergeSort.Sort(array)));
         }
