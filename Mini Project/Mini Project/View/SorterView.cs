@@ -93,7 +93,7 @@ namespace Mini_Project.View
             return curUserSelection;
         }
 
-        // currentSelection must be between 0 and 2 (inclusive) 
+        // currentSelection must be between 0 and 4 (inclusive) 
         private static string MakeChoicesString(int currentSelection, out int numLines) {
             const char PointerChar = '*';
             string[] stringArr = new string[] {
