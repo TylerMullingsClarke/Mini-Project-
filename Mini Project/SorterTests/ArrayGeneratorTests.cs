@@ -15,17 +15,6 @@ namespace SorterTests
             Assert.That(array, Has.Length.EqualTo(length));
         }
 
-        [TestCase(0)]
-        [Category("Length Input Test")]
-        public void GivenInvalidSortTypeInput_ExceptionThrown(int input)
-        {
-            Assert.That(() =>
-            {
-                return ArrayGenerator.NewRandom(input);
-            }, Throws.TypeOf<ArgumentOutOfRangeException>());
-        }
-        
-
         [TestCase(2)]
         [TestCase(10)]
         [Category("Random Array Test")]
