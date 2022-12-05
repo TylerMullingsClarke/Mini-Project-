@@ -9,15 +9,44 @@ namespace Mini_Project.View
     {
         private static string _newline = Environment.NewLine;
 
+        //Main Loop
         public static void Main(string[] args) {
-            int length = GetUserArrayLengthChoice();
-            var userSelection = GetUserAlgorithmChoice();
+            bool running = true;
+            while (running)
+            {
 
-            var sorter = SelectSorter(userSelection);
-            var controller = new SorterController(sorter, length);
+                int length = GetUserArrayLengthChoice();
+                var userSelection = GetUserAlgorithmChoice();
 
-            DisplayResult(controller);
+                var sorter = SelectSorter(userSelection);
+                var controller = new SorterController(sorter, length);
+
+                DisplayResult(controller);
+                running = continueChoice();
+            }
         }
+
+        //Determines whether the user wants to continue suing the program
+        private static bool continueChoice()
+        {
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Would you like to sort an array again? (Y/N)");
+                string choice = Console.ReadLine();
+                Console.Clear();
+                if (choice.ToUpper() == "Y")
+                {
+                    return true;
+                }
+                else if (choice.ToUpper() == "N")
+                {
+                    return false;
+                }
+                Console.WriteLine("Please provide a valid input");
+            }
+        }
+
 
         private static int GetUserArrayLengthChoice() {
             bool userEnteredInvalidInput = false;
@@ -62,6 +91,7 @@ namespace Mini_Project.View
             return curUserSelection;
         }
 
+        
         public static ISorter SelectSorter(int input) {
             ISorter sorter = input switch {
                 0 => new BubbleSorter(),
