@@ -1,11 +1,6 @@
 ﻿using Mini_Project.Model;
 using Mini_Project.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mini_Project.Controller
 {
@@ -34,7 +29,8 @@ namespace Mini_Project.Controller
             foreach (var item in sortedArr) {
                 Console.Write($"{item} ");
             }
-            Console.WriteLine($"\n\nTime taken to sort: {stopwatch.Elapsed.TotalMilliseconds}ms");
+            string newLines = $"{Environment.NewLine}{Environment.NewLine}";
+            Console.WriteLine($"{newLines}Time taken to sort: {stopwatch.Elapsed.TotalMilliseconds}ms");
         }
     }
 }
