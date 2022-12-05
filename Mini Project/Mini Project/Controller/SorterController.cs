@@ -9,22 +9,6 @@ namespace Mini_Project.Controller
         private int[] _array;
         public ISorter Sorter { get; private set; }
 
-        public DefaultSorter DefaultSorter
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public View.SorterView SorterView
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public SorterController(ISorter sorter, int arrayLength) {
             Sorter = sorter;
             _array = ArrayGenerator.NewRandom(arrayLength);

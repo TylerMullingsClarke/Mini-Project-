@@ -92,16 +92,6 @@ namespace Mini_Project.View
             return curUserSelection;
         }
 
-        public static ISorter SelectSorter(int input) {
-            ISorter sorter = input switch {
-                0 => new BubbleSorter(),
-                1 => new MergeSorter(),
-                2 => new DefaultSorter(),
-                _ => throw new ArgumentException()
-            };
-            return sorter;
-        }
-
         // currentSelection must be between 0 and 2 (inclusive) 
         private static string MakeChoicesString(int currentSelection, out int numLines) {
             const char PointerChar = '*';
