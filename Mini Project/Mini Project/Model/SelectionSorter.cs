@@ -17,18 +17,18 @@ namespace Mini_Project.Model
             for (int i = 0; i < nums.Length-1; i++)
             {
                 jmin = i;
-                for (int j = i+1; j < nums.Length - 1; j++)
+                for (int j = i+1; j < nums.Length; j++)
                 {
                     if (nums[j] < nums[jmin] )
                     {
                         jmin = j;
                     }
-                    if (jmin != i)
-                    {
-                        tmp = nums[i];
-                        nums[i] = nums[jmin];
-                        nums[jmin] = tmp;
-                    }
+                }
+                if (jmin != i)
+                {
+                    tmp = nums[i];
+                    nums[i] = nums[jmin];
+                    nums[jmin] = tmp;
                 }
             }
             return nums;
