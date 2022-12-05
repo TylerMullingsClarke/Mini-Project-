@@ -73,7 +73,7 @@ namespace Mini_Project.View
                 var lengthInput = Console.ReadLine();
                 var success = int.TryParse(lengthInput, out var length);
                 // Consider 0 an invalid input
-                if (!success || length is 0) {
+                if (!success || length is <= 0) {
                     ConsoleHelpers.ClearPreviousConsoleLines(numLinesToClear);
                     ConsoleHelpers.WriteLineInColour("Invalid input.", ConsoleColor.Red);
                     userEnteredInvalidInput = true;
@@ -99,7 +99,7 @@ namespace Mini_Project.View
                     curUserSelection = (curUserSelection + 1) % NumAlgorithms;
                 }
                 else if (keyInfo.Value.Key == ConsoleKey.UpArrow) {
-                    curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % NumAlgorithms : 2;
+                    curUserSelection = (curUserSelection - 1) >= 0 ? (curUserSelection - 1) % NumAlgorithms : NumAlgorithms;
                 }
 
                 ConsoleHelpers.ClearPreviousConsoleLines(numLines + 1);  // 1 extra necessary due to user input (I think)
