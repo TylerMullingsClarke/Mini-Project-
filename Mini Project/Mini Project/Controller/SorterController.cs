@@ -37,9 +37,9 @@ namespace Mini_Project.Controller
             ISorter sorter = input switch {
                 0 => new BubbleSorter(),
                 1 => new MergeSorter(),
-                2 => new DefaultSorter(),
-                3 => new SelectionSorter(),
-                4 => new InsertSort(),
+                2 => new SelectionSorter(),
+                3 => new InsertSort(),
+                4 => new DefaultSorter(),
                 _ => throw new ArgumentException()
             } ;
             return sorter;
