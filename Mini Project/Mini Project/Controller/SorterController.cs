@@ -39,8 +39,9 @@ namespace Mini_Project.Controller
                 1 => new MergeSorter(),
                 2 => new DefaultSorter(),
                 3 => new SelectionSorter(),
+                4 => new InsertSort(),
                 _ => throw new ArgumentException()
-            };
+            } ;
             return sorter;
         }
     }
