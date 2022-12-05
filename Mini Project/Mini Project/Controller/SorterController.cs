@@ -38,6 +38,7 @@ namespace Mini_Project.Controller
                 0 => new BubbleSorter(),
                 1 => new MergeSorter(),
                 2 => new DefaultSorter(),
+                3 => new SelectionSorter(),
                 _ => throw new ArgumentException()
             };
             return sorter;
