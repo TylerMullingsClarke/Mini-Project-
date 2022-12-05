@@ -62,7 +62,7 @@ namespace Mini_Project.View
             return curUserSelection;
         }
 
-        private static ISorter SelectSorter(int input) {
+        public static ISorter SelectSorter(int input) {
             ISorter sorter = input switch {
                 0 => new BubbleSorter(),
                 1 => new MergeSorter(),
