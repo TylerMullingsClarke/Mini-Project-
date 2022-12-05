@@ -8,26 +8,27 @@ namespace Mini_Project.View
     public class SorterView
     {
         private static string _newline = Environment.NewLine;
-        private const int NumAlgorithms = 3;
-
-        public static void Main(string[] args) {
+        private const int NumAlgorithms = 4;
+        private SorterController? _controller;
+        
+        public void MainLoop() {
             bool running = true;
             while (running)
             {
-
                 int length = GetUserArrayLengthChoice();
                 var userSelection = GetUserAlgorithmChoice();
 
                 var sorter = SorterController.SelectSorter(userSelection);
-                var controller = new SorterController(sorter, length);
+                _controller = new SorterController(sorter, length);
 
-                DisplayResult(controller);
-                running = continueChoice();
+                DisplayResult(_controller);
+                running = ContinueChoice();
             }
         }
 
+
         //Determines whether the user wants to continue suing the program
-        private static bool continueChoice()
+        private static bool ContinueChoice()
         {
             while (true)
             {
@@ -99,6 +100,7 @@ namespace Mini_Project.View
                 $"Choose a sort algorithm:{_newline}",
                 "Bubble Sort",
                 "Merge Sort",
+                "Selection Sort",                
                 "Default Sort"
              };
             numLines = stringArr.Length + 1;  // + 1 for the newline
