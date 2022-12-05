@@ -19,8 +19,8 @@ namespace Mini_Project.View
                 int length = GetUserArrayLengthChoice();
                 var userSelection = GetUserAlgorithmChoice();
 
-            var sorter = SorterController.SelectSorter(userSelection);
-            var controller = new SorterController(sorter, length);
+                var sorter = SorterController.SelectSorter(userSelection);
+                var controller = new SorterController(sorter, length);
 
                 DisplayResult(controller);
                 running = continueChoice();
@@ -44,7 +44,7 @@ namespace Mini_Project.View
                 {
                     return false;
                 }
-                Console.WriteLine("Please provide a valid input");
+                Console.WriteLine("Please provide a valid input before you are smited by Lord Phil");
             }
         }
 
