@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mini_Project.Model
 {
-    internal class DefaultSorter : ISorter
+    public class DefaultSorter : ISorter
     {
         public string SortName { get; } = "Default Sort";
 
