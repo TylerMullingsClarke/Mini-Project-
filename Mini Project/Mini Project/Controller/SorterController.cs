@@ -7,9 +7,9 @@ namespace Mini_Project.Controller
     public class SorterController
     {
         private int[] _array;
-        public ISorter Sorter { get; private set; }
+        public AbsSorter Sorter { get; private set; }
 
-        public SorterController(ISorter sorter, int arrayLength) {
+        public SorterController(AbsSorter sorter, int arrayLength) {
             Sorter = sorter;
             _array = ArrayGenerator.NewRandom(arrayLength);
         }
@@ -33,15 +33,15 @@ namespace Mini_Project.Controller
             Console.WriteLine($"{newLines}Time taken to sort: {stopwatch.Elapsed.TotalMilliseconds}ms");
         }
 
-        public static ISorter SelectSorter(int input) {
-            ISorter sorter = input switch {
+        public static AbsSorter SelectSorter(int input) {
+            AbsSorter sorter = input switch {
                 0 => new BubbleSorter(),
                 1 => new MergeSorter(),
                 2 => new SelectionSorter(),
                 3 => new InsertSort(),
                 4 => new DefaultSorter(),
                 _ => throw new ArgumentException()
-            } ;
+            };
             return sorter;
         }
     }
